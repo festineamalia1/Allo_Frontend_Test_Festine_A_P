@@ -274,8 +274,7 @@ align-items: center;
       font-size: 12px;
     }
     .logo-title{
-  width: 52px !important;
-  height: 32px;
+  width: 56px !important;
 
 }
 .list-button{
@@ -344,6 +343,10 @@ align-items: center;
 
 .swiper-wrapper{
   height: 100px !important;
+}
+
+.pic-rocket{
+  width: 500px;
 }
 
 /* ---------------------------------------------------------------------------------------------------- */

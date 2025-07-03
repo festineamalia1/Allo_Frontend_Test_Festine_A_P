@@ -20,8 +20,8 @@ const NavBar = (props) => {
       <a class="navbar-brand d-flex align-items-center">
          <div class="logo d-flex align-items-center justify-content-center"  onClick={() => navigate(`/home`)}> 
          
-         <img src={require(`../assets/images/order-icon.png`)} alt="Logo" className="logo-title w-80 px-2"/> 
-          ORDERLIST
+         <img src={require(`../assets/images/astronot.png`)} alt="Logo" className="logo-title w-80 px-2"/> 
+          ROCKETLIST
           </div>
 
       </a>

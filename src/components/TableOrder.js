@@ -14,7 +14,9 @@ import Popover from 'react-bootstrap/Popover';
 // import Profil from "assets/images/usernav.png";
 // import Logout from "assets/images/logout.svg";
 import { API } from "config/api";
-const TableOrder = ({dataOrder}) => {
+const TableOrder = ({dataRocket}) => {
+  console.log("datahomenew", dataRocket?.data[0]?.links?.flickr?.original[0])
+ 
   const [idTransporter, setIdTransporter] = useState();
     const [asal, setAsal] = useState();
      const [idEdit, setIdEdit] = useState();
@@ -133,45 +135,24 @@ const handleEditData = ( e) => {
       <thead>
         <tr>
           <th>#</th>
-          <th>Do / No</th>
-          <th>Goods</th>
-          <th>Origin</th>
-          <th>Destination</th>
-          <th>Address</th>
-        
+          <th>Image</th>
+          <th>Name</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
-        {dataOrder?.data?.order_list &&
-                      dataOrder?.data?.order_list?.map((data, i) => (
+        {dataRocket?.data &&
+                      dataRocket?.data?.map((data, i) => (
         <tr>
           <td>{i+1}</td>
-          <td className="td-dono">
-            <div className="row px-2">
-              <div className="col-sm-8 d-flex align-items-center ">
-                  <div className="row ">
-                      {data?.do_no}
-                  </div>
-              </div>
-              <div className="col">
-                <div className="row d-flex   justify-content-end" >
-                  <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                    <button type="button" class="btn btn-warning"
-                    onClick={() => setIdHapus(data?.do_id)}
-                    >
-                      Kelola
-                      </button>
-                  </OverlayTrigger>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td> {data?.goods_name}</td>
-          <td> {data?.origin_name}</td>
-          <td> {data?.destination_name}</td>
-          <td> {data?.destination_address}</td>
+          <td >
+              <img src={data?.links?.flickr?.original[0]} alt="Logo" className="pic-rocket w-80 px-2"/> 
+            </td>
+          <td>{data?.rocket}</td>
+          <td> {data?.details}</td>
+         
         </tr>
-         ))} 
+        ))} 
         
       </tbody>
     </Table>
