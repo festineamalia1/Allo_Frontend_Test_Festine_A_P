@@ -148,7 +148,11 @@ const handleEditData = ( e) => {
           <td >
               <img src={data?.links?.flickr?.original[0]} alt="Logo" className="pic-rocket w-80 px-2"/> 
             </td>
-          <td>{data?.rocket}</td>
+          <td>
+            <div onClick={() => navigate(`/detail/${data?.id}`)}>
+            {data?.name}
+            </div>
+            </td>
           <td> {data?.details}</td>
          
         </tr>

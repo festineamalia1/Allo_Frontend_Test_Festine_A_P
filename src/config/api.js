@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Set config defaults when creating the instance || Base URL
-export const API = "http://localhost:3001";
+export const API = "https://api.spacexdata.com/v5/launches";
 export const BASE_URL = window.location.origin;
 
 // Alter defaults after instance has been created || Integrate default header for auth

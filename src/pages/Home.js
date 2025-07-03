@@ -14,6 +14,7 @@ export default function Home() {
 
 
 const [dataRocket, setDataRocket] = useState();
+const [keyword, setKeyword] = useState();
 
 
 
@@ -21,7 +22,27 @@ const [dataRocket, setDataRocket] = useState();
    const fetchDataRocket = () => {
       axios
         .get(
-          `${API}/rockets`
+          `${API}`
+        )
+        .then(function (response) {
+           
+          console.log(response);
+          setDataRocket(response)
+  
+          
+        })
+        .catch(function (error) {
+          console.log(error);
+          alert(
+            error.response.data.message
+          );
+        });
+    };
+
+    const handleSearchRocket = () => {
+      axios
+        .get(
+          `${API}?name=${keyword}`
         )
         .then(function (response) {
            
@@ -68,16 +89,15 @@ const [dataRocket, setDataRocket] = useState();
          </span>
        
          <input type="text" className="form-control border-start-0" placeholder="Cari Rocket Name" 
-        //  value={keyword}
-        //  onChange={(e) => setKeyword(e.target.value)}
+         value={keyword}
+         onChange={(e) => setKeyword(e.target.value)}
          />
        </div>
     
     </div>
     <div className="col-md-auto  d-flex   justify-content-end">
       <button type="button" class="btn btn-primary"
-      // onClick={() => {handleCari()}}
-                        >Cari</button>
+       onClick={() => {handleSearchRocket()}}>Cari</button>
                         
     </div>
 

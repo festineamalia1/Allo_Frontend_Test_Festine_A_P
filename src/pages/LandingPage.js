@@ -12,7 +12,7 @@ const LandingPage = (props) => {
      const fetchDataRocket = () => {
       axios
         .get(
-          `${API}/rockets`
+          `${API}`
         )
         .then(function (response) {
            
