@@ -1,17 +1,8 @@
 import React, { useState, useRef, useContext } from "react";
 import { connect } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { API, BASE_URL } from "config/api";
 const NavBar = (props) => {
-  const [active, setActive] = useState(false);
-  const target = useRef(null);
   const navigate = useNavigate();
-
-  const handleMenu = (link) => {
-    navigate(`/${link}`)
-    setActive(true)
-  }
-
   return (
     <>
      
@@ -19,11 +10,9 @@ const NavBar = (props) => {
     <div class="container">
       <a class="navbar-brand d-flex align-items-center">
          <div class="logo d-flex align-items-center justify-content-center"  onClick={() => navigate(`/home`)}> 
-         
          <img src={require(`../assets/images/astronot.png`)} alt="Logo" className="logo-title w-80 px-2"/> 
           ROCKETLIST
           </div>
-
       </a>
 
       <div class="ms-auto">

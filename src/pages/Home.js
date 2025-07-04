@@ -69,7 +69,7 @@ const [keyword, setKeyword] = useState();
   return (
     <>
     <div className="container-fluid">
- <NavBar />
+      <NavBar />
     </div>
 
     <section id="layanan">
@@ -79,15 +79,12 @@ const [keyword, setKeyword] = useState();
               <h5>Daftar Rocket</h5>
               </div>
               <div className="col d-flex align-items-end justify-content-end">
-                
-                     <button type="button" class="btn btn-success">Tambah</button>
-         
+                <button type="button" class="btn btn-success">Tambah</button>
               </div>
           </div>
-       <div className="row mt-3">
-         
+  <div className="row mt-3">
     <div className="col p-0">
-          <div className="input-group">
+      <div className="input-group">
          <span className="input-group-text bg-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#bcbcbc" class="bi bi-search-heart" viewBox="0 0 16 16">
             <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
@@ -100,24 +97,14 @@ const [keyword, setKeyword] = useState();
          onChange={(e) => setKeyword(e.target.value)}
          />
        </div>
-    
     </div>
     <div className="col-md-auto  d-flex   justify-content-end">
       <button type="button" class="btn btn-primary"
        onClick={() => {handleSearchRocket()}}>Cari</button>
-                        
     </div>
-
-   
-       </div>
-      
-
-        
-
+  </div>
         <div className="row mt-3">
-       
          <TableOrder dataRocket={dataRocket}/>
-
         </div>
       </div>
     </section>
